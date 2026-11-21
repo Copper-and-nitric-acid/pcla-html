@@ -1,0 +1,16 @@
+{
+  "name": "pcla-html",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PCLA — 一个用 HTML / CSS / TypeScript 写成的 Minecraft 网页启动器",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --format=esm --target=es2020 --outfile=assets/app.js --minify",
+    "dev": "esbuild src/main.ts --bundle --format=esm --target=es2020 --outfile=assets/app.js --watch --servedir=.",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.0"
+  }
+}

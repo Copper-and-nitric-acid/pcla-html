@@ -1734,3 +1734,36 @@ html.js .reveal {
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* footer contact */
+.footer-contact {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  color: var(--dim);
+  font-size: 10.5px;
+}
+
+.footer-contact .ico {
+  width: 13px;
+  height: 13px;
+  color: var(--muted);
+}
+
+.footer-contact a {
+  color: var(--text);
+  border-bottom: 1px solid var(--line-strong);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-contact a:hover {
+  color: var(--accent);
+  border-color: rgba(200, 245, 109, 0.5);
+}
+
+@media (max-width: 640px) {
+  .footer-contact {
+    font-size: 11px;
+  }
+}

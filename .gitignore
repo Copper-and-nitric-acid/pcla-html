@@ -1,3 +1,8 @@
 node_modules/
 .DS_Store
 *.log
+server/api/config.local.php
+server/storage/*.sqlite
+server/storage/*.sqlite-*
+server/storage/*.db
+server/storage/*.log

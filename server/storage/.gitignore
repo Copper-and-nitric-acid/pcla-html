@@ -1,0 +1,6 @@
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+!.htaccess
+!.gitignore

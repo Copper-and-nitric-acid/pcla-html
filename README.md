@@ -22,6 +22,18 @@ npm run typecheck  # TypeScript 类型检查
 
 推送到 `main` 后，由 GitHub Pages 直接发布仓库根目录。
 
+## PHP 后端
+
+仓库里的 `server/` 是一套可直接部署的 PHP + SQLite 小后端：
+
+- 下载中转计数（`/api/download.php`）
+- 下载 / 反馈统计（`/api/stats.php`）
+- 留言反馈与审核（`/api/feedback.php`、`/api/admin.php`）
+- 无需 MySQL，首次请求自动建表
+
+GitHub Pages 只能托管静态文件，跑不了 PHP；需要把 `server/api/` 与 `server/storage/`
+上传到支持 PHP 的主机。部署步骤见 [server/README.md](server/README.md)。
+
 ## 说明
 
 PCLA 是第三方、非官方项目，与 Mojang Studios、Microsoft 及 PCL 官方无关。

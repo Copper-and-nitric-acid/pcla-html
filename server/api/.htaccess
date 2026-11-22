@@ -1,0 +1,19 @@
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "^(config|db|helpers|_bootstrap)\.php$">
+        Require all denied
+    </FilesMatch>
+    <FilesMatch "\.(sqlite|sqlite3|db|log)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    <FilesMatch "^(config|db|helpers|_bootstrap)\.php$">
+        Deny from all
+    </FilesMatch>
+    <FilesMatch "\.(sqlite|sqlite3|db|log)$">
+        Deny from all
+    </FilesMatch>
+</IfModule>

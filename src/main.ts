@@ -242,9 +242,61 @@ function setupCopy(): void {
   });
 }
 
-function setupDownloadFeedback(): void {
+function setupSupportPrompt(): void {
+  const dialog = qs<HTMLDialogElement>('#support-dialog');
+  if (!dialog) return;
+
+  const ACK_KEY = 'pcla.support.ack';
+  const SNOOZE_KEY = 'pcla.support.snooze';
+
+  const shouldPrompt = (): boolean => {
+    try {
+      if (localStorage.getItem(ACK_KEY) === '1') return false;
+      const until = Number(localStorage.getItem(SNOOZE_KEY) ?? '0');
+      return !(until > Date.now());
+    } catch {
+      return true;
+    }
+  };
+
+  let timer = 0;
+  const open = (): void => {
+    if (dialog.open) return;
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+  };
+
   qsa<HTMLAnchorElement>('a[data-download]').forEach((link) => {
-    link.addEventListener('click', () => toast('正在打开 GitHub 仓库…', 'info', 2200));
+    link.addEventListener('click', () => {
+      if (!shouldPrompt()) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(open, 1200);
+    });
+  });
+
+  qsa<HTMLElement>('[data-support-action]', dialog).forEach((el) => {
+    el.addEventListener('click', (event) => {
+      const action = el.dataset.supportAction;
+      if (action === 'buy') {
+        dialog.close();
+        return;
+      }
+
+      event.preventDefault();
+      try {
+        if (action === 'ack') localStorage.setItem(ACK_KEY, '1');
+        else localStorage.setItem(SNOOZE_KEY, String(Date.now() + 24 * 60 * 60 * 1000));
+      } catch {
+        /* 隐私模式下忽略 */
+      }
+
+      dialog.close();
+      toast(action === 'ack' ? '感谢支持正版' : '好的，下次再说', action === 'ack' ? 'success' : 'info');
+    });
+  });
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
   });
 }
 
@@ -358,7 +410,7 @@ function boot(): void {
   setupSpotlight();
   setupFaq();
   setupCopy();
-  setupDownloadFeedback();
+  setupSupportPrompt();
   setupParallax();
   setupActiveNav();
   setupScrollProgress();

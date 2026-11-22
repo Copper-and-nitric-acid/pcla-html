@@ -1767,3 +1767,23 @@ html.js .reveal {
     font-size: 11px;
   }
 }
+
+/* two contact addresses */
+.footer-contact {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-contact .ico {
+  margin-top: 3px;
+}
+
+.footer-mails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-mails a {
+  width: fit-content;
+}

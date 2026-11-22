@@ -94,7 +94,7 @@
         <div class="hero-copy">
           <a class="release-pill" href="#changelog">
             <span class="live-dot"></span>
-            <span>Alpha 0.7.1 已上线</span>
+            <span>Alpha 0.1.0 已发布</span>
             <i></i>
             <span class="pill-link">看看更新了什么 <svg class="ico" viewBox="0 0 24 24"><use href="#i-arrow-right"></use></svg></span>
           </a>
@@ -112,7 +112,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary btn-xl btn-download" href="https://github.com/Copper-and-nitric/plain-craft-launcher-for-android" target="_blank" rel="noreferrer noopener" data-download>
               <span class="btn-ico"><svg class="ico" viewBox="0 0 24 24"><use href="#i-download"></use></svg></span>
-              <span class="btn-lines"><b>下载 Android 版</b><small>v0.7.1-alpha · 81 MB</small></span>
+              <span class="btn-lines"><b>下载 Android 版</b><small>v0.1.0-alpha · 81 MB</small></span>
               <span class="btn-shine" aria-hidden="true"></span>
             </a>
             <a class="btn btn-soft btn-xl" href="#probe">
@@ -281,7 +281,7 @@
             <p>多文件队列、自动换源、SHA-1 校验、遇到 429 就自适应降并发。下载这件事，应该稳到不需要你盯着。</p>
             <div class="f-visual f-visual-download">
               <div class="mini-dl">
-                <div class="mini-dl-row"><span>PCLA-0.7.1.apk</span><b>100%</b></div>
+                <div class="mini-dl-row"><span>PCLA_Alpha0.1.0.apk</span><b>100%</b></div>
                 <div class="mini-bar"><i class="done" style="width:100%"></i></div>
               </div>
               <div class="mini-dl">
@@ -495,7 +495,7 @@
                       <div class="app-input"><svg class="ico" viewBox="0 0 24 24"><use href="#i-link"></use></svg><span>粘贴下载地址，每行一条…</span></div>
                       <div class="dl-app-summary"><span>总进度 68%</span><span class="app-badge blue">1.30 MB/s</span></div>
                       <div class="dl-app-item">
-                        <div class="dl-app-row"><span>PCLA-0.7.1.apk</span><b>100%</b></div>
+                        <div class="dl-app-row"><span>PCLA_Alpha0.1.0.apk</span><b>100%</b></div>
                         <div class="app-bar"><i class="done" style="width:100%"></i></div>
                         <div class="dl-app-meta"><span>81 MB · SHA-1 已校验</span><span class="ok">完成</span></div>
                       </div>
@@ -544,10 +544,10 @@
           <div class="download-panel">
             <div class="dp-head">
               <span class="dp-icon"><svg class="cube-svg" style="--cube-top:#6ff0c8;--cube-left:#3d8bff;--cube-right:#1d4b9c" viewBox="0 0 64 64"><use href="#mc-cube"></use></svg></span>
-              <div><span class="dp-eyebrow">ANDROID · ALPHA</span><h3>PCLA <span>0.7.1-alpha</span></h3><p>构建 48 · arm64-v8a</p></div>
+              <div><span class="dp-eyebrow">ANDROID · ALPHA</span><h3>PCLA <span>0.1.0-alpha</span></h3><p>首个公开构建 · arm64-v8a</p></div>
             </div>
             <div class="dp-meta">
-              <div><small>更新时间</small><b>2026-11-01</b></div>
+              <div><small>更新时间</small><b>2026-10-25</b></div>
               <div><small>包名</small><b>io.pcla.app</b></div>
               <div><small>许可证</small><b>AGPL-3.0</b></div>
             </div>
@@ -576,40 +576,27 @@
 
         <div class="timeline">
           <article class="release reveal">
-            <div class="release-side"><span class="release-version">0.7.1</span><span class="release-type">alpha · 当前</span><time>2026-11-01</time></div>
+            <div class="release-side"><span class="release-version">0.1.0</span><span class="release-type">alpha · 当前</span><time>2026-10-25</time></div>
             <div class="release-body">
-              <div class="release-head"><h3>JVM + LWJGL 启动栈</h3><span class="tag accent">BUILD 48</span></div>
-              <p>这一构建把启动需要的运行时一起装进了 APK，并继续沿用 PCL 风格的启动器界面。</p>
-              <ul>
-                <li>内置 Java 8 与 Java 17 运行时</li>
-                <li>arm64-v8a 原生库与渲染支持</li>
-                <li>版本、内存与最近启动集中在一屏</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="release reveal">
-            <div class="release-side"><span class="release-version">0.2.0</span><span class="release-type">alpha</span><time>2026-10-26</time></div>
-            <div class="release-body">
-              <div class="release-head"><h3>下载引擎 v0.2</h3><span class="tag">QUEUE</span></div>
-              <p>把下载从“能下”推进到“下得稳”：多文件队列、换源链、限流自适应和完整性校验。</p>
-              <ul>
-                <li>多文件队列，默认 2 并发、上限 8</li>
-                <li>主源失败或哈希不符时自动换源</li>
-                <li>429 自适应并发 + SHA-1 校验</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="release reveal">
-            <div class="release-side"><span class="release-version">0.1.0</span><span class="release-type">alpha</span><time>2026-10-25</time></div>
-            <div class="release-body">
-              <div class="release-head"><h3>先学会读懂设备</h3><span class="tag">PROBE</span></div>
-              <p>第一个可运行的版本：设备探测、档位决策、GC 日志分析与 PCL 风格界面。</p>
+              <div class="release-head"><h3>先学会读懂设备</h3><span class="tag accent">ALPHA 0.1</span></div>
+              <p>第一个可运行的版本：设备探测、档位决策、GC 日志分析与 PCL 风格界面，都在这一版里落地。</p>
               <ul>
                 <li>EGL14 离屏读取 GPU 与版本信息</li>
                 <li>按 SoC / GPU / 内存推荐堆与渲染距离</li>
                 <li>解析 GC 日志，输出 STW 分位数</li>
+                <li>PCL 风格界面与下载模块 v0.1</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="release reveal">
+            <div class="release-side"><span class="release-version">0.0.1</span><span class="release-type">alpha</span><time>2026-10-25</time></div>
+            <div class="release-body">
+              <div class="release-head"><h3>仓库建立</h3><span class="tag">START</span></div>
+              <p>PCLA 正式开工：选择 AGPL-3.0 协议，GitHub Actions 完成第一次构建。</p>
+              <ul>
+                <li>项目仓库与许可证就位</li>
+                <li>CI 首次构建通过</li>
               </ul>
             </div>
           </article>
@@ -719,7 +706,7 @@
   </footer>
 
   <div class="mobile-cta" id="mobile-cta">
-    <div><small>PCLA · Alpha</small><b>v0.7.1-alpha</b></div>
+    <div><small>PCLA · Alpha</small><b>v0.1.0-alpha</b></div>
     <a class="btn btn-primary" href="https://github.com/Copper-and-nitric/plain-craft-launcher-for-android" target="_blank" rel="noreferrer noopener" data-download>
       下载
       <svg class="ico" viewBox="0 0 24 24"><use href="#i-download"></use></svg>

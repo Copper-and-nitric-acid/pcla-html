@@ -312,11 +312,46 @@ function setupScrollProgress(): void {
   update();
 }
 
+
+function setupSponsor(): void {
+  const button = qs<HTMLAnchorElement>('#sponsor-btn');
+  const pop = qs<HTMLElement>('#sponsor-pop');
+  if (!button || !pop) return;
+
+  const setOpen = (open: boolean): void => {
+    pop.classList.toggle('open', open);
+    pop.setAttribute('aria-hidden', String(!open));
+    button.setAttribute('aria-expanded', String(open));
+  };
+
+  button.addEventListener('click', (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    setOpen(!pop.classList.contains('open'));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!pop.classList.contains('open')) return;
+    const target = event.target;
+    if (target instanceof Node && (pop.contains(target) || button.contains(target))) return;
+    setOpen(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+
+  window.addEventListener('scroll', () => setOpen(false), { passive: true });
+
+  pop.querySelector('a')?.addEventListener('click', () => setOpen(false));
+}
+
 function boot(): void {
   initTheme();
   setupTheme();
   setupHeader();
   setupMobileMenu();
+  setupSponsor();
   setupReveal();
   setupCounters();
   setupScreens();
